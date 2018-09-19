@@ -40,3 +40,5 @@ export type TaggedUnionMember<A extends object, Tag extends keyof A, Value exten
   A,
   Record<Tag, Value>
 >
+
+export type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends ((k: infer I) => void) ? I : never
